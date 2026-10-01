@@ -1,0 +1,118 @@
+/* ==========================================
+ * Build: 2026-10-01 17:00:00
+ * Changes: 4 of 4
+ * Location: /test_nrz/assets/css/weather.css
+ * ========================================== */
+
+/* ==========================================
+ * 1. متغیرهای ماژول اب و هوا
+ * ========================================== */
+:root {
+    --weather-bg:        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --weather-text:      #ffffff;
+    --weather-text-muted: rgba(255, 255, 255, 0.85);
+    --weather-radius:    10px;
+    --weather-shadow:    0 4px 12px rgba(0, 0, 0, 0.15);
+    --weather-padding:   18px 22px;
+}
+
+/* ==========================================
+ * 2. ساختار ویجت
+ * ========================================== */
+.weather-widget {
+    background: var(--weather-bg);
+    border-radius: var(--weather-radius);
+    box-shadow: var(--weather-shadow);
+    padding: var(--weather-padding);
+    color: var(--weather-text);
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.weather-widget__loader {
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 0;
+    opacity: 0.9;
+}
+
+.weather-widget__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ==========================================
+ * 3. بخش اصلی (آیکون + دما + شهر)
+ * ========================================== */
+.weather-widget__main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.weather-widget__icon {
+    font-size: 42px;
+    line-height: 1;
+}
+
+.weather-widget__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.weather-widget__temp {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.weather-widget__city {
+    font-size: 13px;
+    color: var(--weather-text-muted);
+}
+
+/* ==========================================
+ * 4. جزئیات (رطوبت + باد)
+ * ========================================== */
+.weather-widget__details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.weather-widget__detail {
+    color: var(--weather-text-muted);
+}
+
+.weather-widget__detail b {
+    color: var(--weather-text);
+}
+
+/* ==========================================
+ * 5. واکنش‌گرا
+ * ========================================== */
+@media (max-width: 480px) {
+    .weather-widget__content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .weather-widget__details {
+        text-align: right;
+        width: 100%;
+    }
+}
+
+/* ==========================================
+ * 6. چاپ
+ * ========================================== */
+@media print {
+    .weather-widget {
+        display: none !important;
+    }
+}

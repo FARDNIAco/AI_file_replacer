@@ -1,0 +1,293 @@
+/* ==========================================
+ * Build: 2026-10-01 16:36:00
+ * Changes: 2 of 2
+ * Location: /test_nrz/assets/css/style.css
+ * ========================================== */
+
+/* ==========================================
+ * 1. متغیرهای سراسری (Design Tokens)
+ * ========================================== */
+:root {
+    /* رنگ‌ها */
+    --color-bg:         #f4f6f9;
+    --color-surface:    #ffffff;
+    --color-primary:    #2d89ef;
+    --color-primary-dk: #1b6fd1;
+    --color-secondary:  #6c757d;
+    --color-secondary-dk:#5a6268;
+    --color-danger:     #c00;
+    --color-danger-bg:  #ffe5e5;
+    --color-border:     #cccccc;
+    --color-divider:    #eeeeee;
+    --color-text:       #333333;
+    --color-text-muted: #555555;
+    --color-th-bg:      #f0f4f8;
+
+    /* فاصله‌ها */
+    --space-xs: 6px;
+    --space-sm: 10px;
+    --space-md: 12px;
+    --space-lg: 18px;
+    --space-xl: 25px;
+    --space-2xl: 30px;
+
+    /* شعاع گوشه */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+
+    /* سایه */
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    /* فونت */
+    --font-family: Tahoma, Arial, sans-serif;
+    --font-size-sm: 14px;
+    --font-size-md: 15px;
+    --font-size-lg: 16px;
+    --font-size-xl: 20px;
+}
+
+/* ==========================================
+ * 2. ریست و پایه
+ * ========================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: var(--space-2xl);
+}
+
+/* ==========================================
+ * 3. چیدمان کلی
+ * ========================================== */
+.app-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+/* ==========================================
+ * 4. کامپوننت Card
+ * ========================================== */
+.card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+.card__header {
+    padding: var(--space-lg) var(--space-xl) 0;
+}
+
+.card__title {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.card__body {
+    padding: var(--space-lg) var(--space-xl) var(--space-xl);
+}
+
+/* ==========================================
+ * 5. کامپوننت Alert
+ * ========================================== */
+.alert {
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-sm);
+}
+
+.alert--error {
+    background-color: var(--color-danger-bg);
+    color: var(--color-danger);
+}
+
+/* ==========================================
+ * 6. کامپوننت Form
+ * ========================================== */
+.form__group {
+    margin-bottom: var(--space-md);
+}
+
+.form__row {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.form__row .form__group {
+    flex: 1;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+.form__input {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(45, 137, 239, 0.15);
+}
+
+/* ==========================================
+ * 7. کامپوننت Button
+ * ========================================== */
+.btn {
+    display: block;
+    width: 100%;
+    padding: var(--space-md);
+    margin-top: var(--space-lg);
+    border: 0;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-md);
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-dk);
+}
+
+.btn--secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-secondary-dk);
+}
+
+/* ==========================================
+ * 8. کامپوننت Table
+ * ========================================== */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-sm);
+}
+
+.table th,
+.table td {
+    padding: var(--space-sm);
+    border-bottom: 1px solid var(--color-divider);
+    text-align: center;
+    font-size: var(--font-size-sm);
+}
+
+.table__head th {
+    background-color: var(--color-th-bg);
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+.table__body tr:hover {
+    background-color: #fafbfd;
+}
+
+.table__cell--strong {
+    font-weight: bold;
+    color: var(--color-primary-dk);
+}
+
+/* ==========================================
+ * 9. کامپوننت Total Box
+ * ========================================== */
+.total-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 2px dashed var(--color-divider);
+    font-size: var(--font-size-lg);
+}
+
+.total-box__label {
+    color: var(--color-text-muted);
+}
+
+.total-box__value {
+    font-weight: bold;
+    color: var(--color-primary-dk);
+}
+
+/* ==========================================
+ * 10. واکنش‌گرا (Responsive)
+ * ========================================== */
+@media (max-width: 480px) {
+    body {
+        padding: var(--space-md);
+    }
+
+    .form__row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .card__header,
+    .card__body {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+}
+
+/* ==========================================
+ * 11. چاپ (Print)
+ * ========================================== */
+@media print {
+    body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid var(--color-divider);
+    }
+
+    .btn,
+    form {
+        display: none !important;
+    }
+}
